@@ -118,6 +118,62 @@ private slots:
     void onClieckAlignRight(bool checked = false);
 
     /*!
+     * @brief 点击顶对齐选项时触发的槽函数
+     * @date 2020-01-14
+     * @author FanKaiyu
+     * @param bool 选项的选中状态
+     */
+    void onClieckAlignTop(bool checked = false);
+
+    /*!
+     * @brief 点击底对齐选项时触发的槽函数
+     * @date 2020-01-14
+     * @author FanKaiyu
+     * @param bool 选项的选中状态
+     */
+    void onClieckAlignBottom(bool checked = false);
+
+    /*!
+     * @brief 点击水平对齐选项时触发的槽函数
+     * @date 2020-01-14
+     * @author FanKaiyu
+     * @param bool 选项的选中状态
+     */
+    void onClieckAlignHcenter(bool checked = false);
+
+    /*!
+     * @brief 点击垂直对齐选项时触发的槽函数
+     * @date 2020-01-14
+     * @author FanKaiyu
+     * @param bool 选项的选中状态
+     */
+    void onClieckAlignVcenter(bool checked = false);
+
+    /*!
+     * @brief 点击等宽选项时触发的槽函数
+     * @date 2020-01-14
+     * @author FanKaiyu
+     * @param bool 选项的选中状态
+     */
+    void onClieckEqualWidth(bool checked = false);
+
+    /*!
+     * @brief 点击等高选项时触发的槽函数
+     * @date 2020-01-14
+     * @author FanKaiyu
+     * @param bool 选项的选中状态
+     */
+    void onClieckEqualHeight(bool checked = false);
+
+    /*!
+     * @brief 点击等尺寸选项时触发的槽函数
+     * @date 2020-01-14
+     * @author FanKaiyu
+     * @param bool 选项的选中状态
+     */
+    void onClieckEqualSize(bool checked = false);
+
+    /*!
      * @brief 点击锁定布局选项时触发的槽函数
      * @date 2020-01-14
      * @author FanKaiyu
