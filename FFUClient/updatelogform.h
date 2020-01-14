@@ -1,7 +1,9 @@
-﻿#ifndef UPDATELOGFORM_H
+#ifndef UPDATELOGFORM_H
 #define UPDATELOGFORM_H
 
 #include <QWidget>
+#include <QFile>
+#include <QTextStream>
 #include <QDebug>
 
 namespace Ui {
@@ -21,6 +23,8 @@ private:
 
 public slots:
     void onFormLoad();
+private slots:
+    void on_pushButton_clicked();
 };
 
 #endif // UPDATELOGFORM_H

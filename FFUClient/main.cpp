@@ -1,11 +1,19 @@
-#include "mainwindow.h"
+#include "LoginForm.h"
 #include <QApplication>
+#include "Custom.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
 
-    return a.exec();
+    LoginForm login;
+    login.show();
+
+    // return a.exec();
+    int e = a.exec();
+    if(e == RETCODE_RESTART)
+    {
+        QProcess::startDetached(qApp->applicationFilePath(), QStringList());
+        return 0;
+    }
 }

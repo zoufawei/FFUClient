@@ -5,7 +5,7 @@
 #include <QDockWidget>
 #include <QAction>
 
-#include "custom.h"
+#include "Custom.h"
 
 #include "AreaManagerForm.h"
 #include "FastCtrlCenterForm.h"
@@ -19,7 +19,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QString user, QString passwd, QWidget *parent = nullptr);
     ~MainWindow();
 
 private:
@@ -38,6 +38,9 @@ private:
 private:
     QAction *m_pActionMenuKey[MENU_KEY_MAX_COUNT];
     QDockWidget *m_pDockWidget[DOCKWIDGET_MAX_COUNT];
+
+    QString m_user;
+    QString m_passwd;
 
 private:
     /**
@@ -96,6 +99,11 @@ private slots:
      * @brief onUserLogManage   用户日志管理
      */
     void onUserLogManage();
+
+    /**
+     * @brief onRestart 重启系统
+     */
+    void onRestart();
 };
 
 #endif // MAINWINDOW_H

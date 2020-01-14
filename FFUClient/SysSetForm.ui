@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SysSetForm</class>
+ <widget class="QWidget" name="SysSetForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>633</width>
+    <height>336</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <property name="leftMargin">
+    <number>1</number>
+   </property>
+   <property name="topMargin">
+    <number>1</number>
+   </property>
+   <property name="rightMargin">
+    <number>1</number>
+   </property>
+   <property name="bottomMargin">
+    <number>1</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="GroupBoxEx" name="groupBox">
+     <property name="title">
+      <string>GroupBox</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="topMargin">
+       <number>70</number>
+      </property>
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="CheckBoxEx" name="checkBox">
+          <property name="text">
+           <string>确认提示框</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="CheckBoxEx" name="checkBox_2">
+          <property name="text">
+           <string>危险警告</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="CheckBoxEx" name="checkBox_3">
+          <property name="text">
+           <string>报警提示</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="CheckBoxEx" name="checkBox_5">
+          <property name="text">
+           <string>声音报警</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="CheckBoxEx" name="checkBox_4">
+          <property name="text">
+           <string>高质量图纸缩放</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="LabelEx" name="label">
+          <property name="text">
+           <string>离线率设置：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="DoubleSpinBoxEx" name="doubleSpinBox">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="LabelEx" name="label_5">
+          <property name="text">
+           <string>低转速阀值：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="SpinBoxEx" name="spinBox">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="LabelEx" name="label_3">
+          <property name="text">
+           <string>低转速比率：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="DoubleSpinBoxEx" name="doubleSpinBox_2">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="2" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="LabelEx" name="label_7">
+          <property name="text">
+           <string>系统名称：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>15</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="LineEditEx" name="lineEditProName">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="3" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="PushButtonEx" name="pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>取消</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="PushButtonEx" name="pushButton_2">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>确定</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>GroupBoxEx</class>
+   <extends>QGroupBox</extends>
+   <header>ctrls/GroupBoxEx.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>LineEditEx</class>
+   <extends>QLineEdit</extends>
+   <header>ctrls/LineEditEx.h</header>
+  </customwidget>
+  <customwidget>
+   <class>LabelEx</class>
+   <extends>QLabel</extends>
+   <header>ctrls/LabelEx.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PushButtonEx</class>
+   <extends>QPushButton</extends>
+   <header>ctrls/PushButtonEx.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CheckBoxEx</class>
+   <extends>QCheckBox</extends>
+   <header>ctrls/CheckBoxEx.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DoubleSpinBoxEx</class>
+   <extends>QDoubleSpinBox</extends>
+   <header>ctrls/DoubleSpinBoxEx.h</header>
+  </customwidget>
+  <customwidget>
+   <class>SpinBoxEx</class>
+   <extends>QSpinBox</extends>
+   <header>ctrls/SpinBoxEx.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

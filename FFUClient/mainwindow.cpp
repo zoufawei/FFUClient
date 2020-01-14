@@ -1,15 +1,17 @@
-﻿#include "mainwindow.h"
-#include "ui_mainwindow.h"
+﻿#include "MainWindow.h"
+#include "ui_MainWindow.h"
 
 #include <QDebug>
-#include "baseslots.h"
+#include "BaseSlots.h"
 #include <QTextEdit>
 #include <QHBoxLayout>
 #include <QSqlError>
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(QString user, QString passwd, QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+    m_user(user),
+    m_passwd(passwd)
 {
     ui->setupUi(this);
 
@@ -17,26 +19,12 @@ MainWindow::MainWindow(QWidget *parent) :
     pal.setColor(QPalette::Background, QColor("#2D3035"));
     this->setAutoFillBackground(true);
     this->setPalette(pal);
+    this->setFixedSize(1200,800);
     setWindowTitle("FFUClient");
 
     initMenu();
     createDockWidget();
     initWidgetVisible();
-
-
-
-    QSqlDatabase db = QSqlDatabase::addDatabase("QODBC3");
-    db.setDatabaseName(QString("DRIVER={SQL SERVER};"
-                               "SERVER=%1;"
-                               "DATABASE=%2;"
-                               "UID=%3;"
-                               "PWD=%4;").arg("zoufawei").arg("FFU").arg("sa").arg("456852"));
-
-    if(!db.open())
-    {
-        QSqlError err = db.lastError();
-        qDebug()<<"db open fail:"<<err.text();;
-    }
 }
 
 MainWindow::~MainWindow()
@@ -119,10 +107,11 @@ void MainWindow::initMenu()
     m_pActionMenuKey[MENU_KEY_PWDMODIFY] = pMenuSet->addAction(QString::fromLocal8Bit("密码修改"));
 
     // 信号绑定
-    BaseSlots *baseSlots = new BaseSlots();
+    BaseSlots *baseSlots = new BaseSlots(m_user, m_passwd);
     // 系统子菜单信号绑定
     connect(m_pActionMenuKey[MENU_KEY_UPDATELOG], SIGNAL(triggered()), baseSlots, SLOT(onActionUpdatelog()));
     connect(m_pActionMenuKey[MENU_KEY_CHANGEUSE], SIGNAL(triggered()), baseSlots, SLOT(onActionChangeuser()));
+    connect(baseSlots, SIGNAL(restart()), this, SLOT(onRestart()));
     connect(m_pActionMenuKey[MENU_KEY_SYSEXIT], SIGNAL(triggered()), baseSlots, SLOT(onActionExit()));
     // 视图子菜单信号绑定
     // 系统监视中心
@@ -499,4 +488,13 @@ void MainWindow::initWidgetVisible()
     updateWidgetVisible(MENU_KEY_FANCTRLLOG);
     updateWidgetVisible(MENU_KEY_FANPOWANAL);
     updateWidgetVisible(MENU_KEY_USERLOGMANAGE);
+}
+
+
+/**
+ * @brief onRestart 重启系统
+ */
+void MainWindow::onRestart()
+{
+    qApp->exit(RETCODE_RESTART);
 }

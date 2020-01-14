@@ -5,23 +5,31 @@
 #include <QDebug>
 #include <QApplication>
 
-#include "updatelogform.h"
+#include "UpdateLogForm.h"
 #include "AddLayoutForm.h"
 #include "FanRunPlanForm.h"
 #include "SensorManageForm.h"
+#include "PasswordChangeForm.h"
+#include "SysSetForm.h"
 
 
 class BaseSlots : public QObject
 {
     Q_OBJECT
 public:
-    BaseSlots();
+    BaseSlots(QString user, QString passwd);
 
+private:
+    QString m_user;
+    QString m_passwd;
 signals:
     // 加载更新日志窗体
     void loadUpdateLogForm();
 
     void loadAddLayoutForm();
+
+    // 切换用户（重启）
+    void restart();
 
 public slots:
    // 更新日志

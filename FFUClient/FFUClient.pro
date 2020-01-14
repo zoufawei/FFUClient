@@ -26,9 +26,6 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
-    baseslots.cpp \
-    updatelogform.cpp \
     AreaManagerForm.cpp \
     FastCtrlCenterForm.cpp \
     AddLayoutForm.cpp \
@@ -46,13 +43,18 @@ SOURCES += \
     ctrls/PushButtonEx.cpp \
     ctrls/TableViewEx.cpp \
     ctrls/TitleBarEx.cpp \
-    SensorEditForm.cpp
+    SensorEditForm.cpp \
+    UpdateLogForm.cpp \
+    LoginForm.cpp \
+    Config.cpp \
+    MainWindow.cpp \
+    BaseSlots.cpp \
+    PasswordChangeForm.cpp \
+    SysSetForm.cpp \
+    ctrls/SpinBoxEx.cpp \
+    ctrls/DoubleSpinBoxEx.cpp
 
 HEADERS += \
-        mainwindow.h \
-    baseslots.h \
-    updatelogform.h \
-    custom.h \
     AreaManagerForm.h \
     FastCtrlCenterForm.h \
     AddLayoutForm.h \
@@ -70,11 +72,19 @@ HEADERS += \
     ctrls/PushButtonEx.h \
     ctrls/TableViewEx.h \
     ctrls/TitleBarEx.h \
-    SensorEditForm.h
+    SensorEditForm.h \
+    UpdateLogForm.h \
+    LoginForm.h \
+    Config.h \
+    MainWindow.h \
+    Custom.h \
+    BaseSlots.h \
+    PasswordChangeForm.h \
+    SysSetForm.h \
+    ctrls/SpinBoxEx.h \
+    ctrls/DoubleSpinBoxEx.h
 
 FORMS += \
-        mainwindow.ui \
-    updatelogform.ui \
     AreaManagerForm.ui \
     FastCtrlCenterForm.ui \
     AddLayoutForm.ui \
@@ -83,7 +93,12 @@ FORMS += \
     SensorManageForm.ui \
     SensorColorForm.ui \
     SensorColorEditForm.ui \
-    SensorEditForm.ui
+    SensorEditForm.ui \
+    UpdateLogForm.ui \
+    LoginForm.ui \
+    MainWindow.ui \
+    PasswordChangeForm.ui \
+    SysSetForm.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

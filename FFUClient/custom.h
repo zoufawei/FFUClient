@@ -1,6 +1,11 @@
 ﻿#ifndef CUSTOM_H
 #define CUSTOM_H
 
+#include <QString>
+
+
+static const int RETCODE_RESTART = 773;
+
 #define MENU_KEY_MAX_COUNT      50      // 子菜单最大数量
 #define DOCKWIDGET_MAX_COUNT    50      // 停靠窗口最大数量
 

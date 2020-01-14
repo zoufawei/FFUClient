@@ -1,6 +1,8 @@
-﻿#include "baseslots.h"
+﻿#include "BaseSlots.h"
 
-BaseSlots::BaseSlots()
+BaseSlots::BaseSlots(QString user, QString passwd):
+    m_user(user),
+    m_passwd(passwd)
 {
     // 更新日志窗体响应
     UpdateLogForm *updateLogForm = new UpdateLogForm();
@@ -11,6 +13,8 @@ BaseSlots::BaseSlots()
     AddLayoutForm *addLayoutForm = new AddLayoutForm();
     connect(this, SIGNAL(loadAddLayoutForm()), addLayoutForm, SLOT(onFormLoad()));
 
+
+
 }
 
 
@@ -19,10 +23,11 @@ void BaseSlots::onActionUpdatelog()
 {
     emit loadUpdateLogForm();
 }
+
 // 更改用户
 void BaseSlots::onActionChangeuser()
 {
-    qDebug()<<QString::fromLocal8Bit("切换用户");
+    emit restart();
 }
 
 // 退出
@@ -145,11 +150,15 @@ void BaseSlots::onLimitManage()
 // 系统设置
 void BaseSlots::onSysSet()
 {
-    qDebug()<<QString::fromLocal8Bit("系统设置");
+    SysSetForm *sysSetForm = new SysSetForm();
+    sysSetForm->setWindowModality(Qt::ApplicationModal);
+    sysSetForm->show();
 }
 
 // 密码修改
 void BaseSlots::onPwdModify()
 {
-    qDebug()<<QString::fromLocal8Bit("密码修改");
+    PasswordChangeForm *passwordChangeForm = new PasswordChangeForm(m_user, m_passwd);
+    passwordChangeForm->setWindowModality(Qt::ApplicationModal);
+    passwordChangeForm->show();
 }
